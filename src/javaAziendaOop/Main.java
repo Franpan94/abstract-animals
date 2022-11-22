@@ -42,29 +42,39 @@ public class Main {
 	
 	int maxValue = Integer.MIN_VALUE;
 	int minValue = Integer.MAX_VALUE;
-	int valueGetInYearCome;
+    int avg = 0;
 	Person personMaxValue = null;
 	Person personMinValue = null;
+	int sum = 0;
 	
 	System.out.println("-------------------------------");
 	
 	for(int i=0; i<persons.length; i++) {
 		Person person = persons[i];
-		valueGetInYearCome = person.getYearIncome();
+		int valueGetInYearCome = person.getYearIncome();
 		
 		if(maxValue < valueGetInYearCome) {
+			maxValue = valueGetInYearCome;
 			personMaxValue = person;
 		}
 		
 		if(minValue > valueGetInYearCome) {
+			minValue = valueGetInYearCome;
 			personMinValue = person;
 		}
+		
+		sum += valueGetInYearCome;
+		avg = sum/persons.length;
 	}
-	System.out.println("Persona con incasso annuale massimo: ");
-	System.out.println(personMaxValue);
+	System.out.println("Persona con incasso annuale massimo: \n" + personMaxValue);
 	
 	System.out.println("----------------------------------------");
-	System.out.println("Persona con incasso annuale minimo: ");
-	System.out.println(personMinValue);
+	System.out.println("Persona con incasso annuale minimo: \n" + personMinValue);
+	
+	System.out.println("----------------------------------------");
+	System.out.println("Costo annuale dell'intera azienda: " + sum + " €");
+	
+	System.out.println("----------------------------------------");
+	System.out.println("Costo medio per ogni dipendente: " + avg + " €");
 }
 }
