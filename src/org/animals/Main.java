@@ -8,6 +8,7 @@ public class Main {
 	c.eat();
 	System.out.print("Verso appartenente: "); 
 	c.verse();
+	c.sleep();
 	System.out.println("-----------------------");
 	
 	Passerotto p = new Passerotto();
@@ -16,6 +17,7 @@ public class Main {
 	p.eat();
 	System.out.print("Verso appartenente: ");
 	p.verse();
+	p.sleep();
 	System.out.println("-----------------------");
 	
 	Aquila a = new Aquila();
@@ -24,6 +26,7 @@ public class Main {
 	a.eat();
 	System.out.print("Verso appartenente: ");
 	a.verse();
+	a.sleep();
 	System.out.println("-----------------------");
 	
 	Delfino d = new Delfino();
@@ -32,6 +35,24 @@ public class Main {
 	d.eat();
 	System.out.print("Verso appartenente: ");
 	d.verse();
+	d.sleep();
 	System.out.println("-----------------------");
+	
+	System.out.print("Passerotto: ");
+	faiVolare(p);
+	
+	System.out.print("Aquila: ");
+	faiVolare(a);
+	
+	System.out.print("Delfino: ");
+	faiNuotare(d);
 }
+   
+   static void faiVolare(IVolante animale) {
+		animale.fly();
+  	}
+   
+   static void faiNuotare(INuotante animale) {
+		animale.swim();
+ 	}
 }
