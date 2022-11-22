@@ -26,7 +26,7 @@ public class Main {
 	
 	System.out.println("");
 	
-	System.out.println("Datori di lavoro");
+	System.out.println("Boss");
 	
 	System.out.println("");
 	
@@ -42,10 +42,14 @@ public class Main {
 	
 	int maxValue = Integer.MIN_VALUE;
 	int minValue = Integer.MAX_VALUE;
+	int maxBossValue = Integer.MIN_VALUE;
+	int minEmployeeValue = Integer.MAX_VALUE;
+	int sum = 0;
     int avg = 0;
 	Person personMaxValue = null;
 	Person personMinValue = null;
-	int sum = 0;
+	Person bossMaxValue = null;
+	Person employeeMinValue = null;
 	
 	System.out.println("-------------------------------");
 	
@@ -63,18 +67,38 @@ public class Main {
 			personMinValue = person;
 		}
 		
+		if(person.getClass().getSimpleName().equals("Boss")) {
+			if(maxBossValue < valueGetInYearCome) {
+				maxBossValue = valueGetInYearCome;
+				bossMaxValue = person;
+			}
+		}
+		
+		if(person.getClass().getSimpleName().equals("Employee")) {
+			 if(minEmployeeValue > valueGetInYearCome) {
+					minEmployeeValue = valueGetInYearCome;
+					employeeMinValue = person;
+			 }
+		}
+		
 		sum += valueGetInYearCome;
 		avg = sum/persons.length;
 	}
-	System.out.println("Persona con incasso annuale massimo: \n" + personMaxValue);
+	System.out.println("\nPersona con incasso annuale massimo: \n" + personMaxValue);
 	
 	System.out.println("----------------------------------------");
-	System.out.println("Persona con incasso annuale minimo: \n" + personMinValue);
+	System.out.println("\nPersona con incasso annuale minimo: \n" + personMinValue);
 	
 	System.out.println("----------------------------------------");
-	System.out.println("Costo annuale dell'intera azienda: " + sum + " €");
+	System.out.println("\nCosto annuale dell'intera azienda: " + sum + " €");
 	
 	System.out.println("----------------------------------------");
-	System.out.println("Costo medio per ogni dipendente: " + avg + " €");
+	System.out.println("\nCosto medio per ogni dipendente: " + avg + " €");
+	
+	System.out.println("----------------------------------------");
+	System.out.println("\nBoss con incasso annuale maggiore: \n" + bossMaxValue);
+	
+	System.out.println("----------------------------------------");
+	System.out.println("\nDipendente con incasso annuale minore: \n" + employeeMinValue);
 }
 }
