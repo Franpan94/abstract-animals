@@ -3,13 +3,13 @@ package javaAziendaOop;
 import java.time.LocalDate;
 
 public class Boss extends Person{
-      int salary;
-      int bonus;
+      private int salary;
+      private int bonus;
       
       public Boss(String name, String surname, LocalDate dateOfBirth, 
-    		  String code, int salary, int bonus) {
+    		  int salary, int bonus) {
     	  
-    	  super(name, surname, dateOfBirth, code);
+    	  super(name, surname, dateOfBirth);
     	  setSalary(salary);
     	  setBonus(bonus);
       }

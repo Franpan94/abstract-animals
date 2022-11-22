@@ -1,6 +1,7 @@
 package javaAziendaOop;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 public abstract class Person {
     private String name;
@@ -9,11 +10,10 @@ public abstract class Person {
     private String code;
     public abstract int getYearIncome();
     
-    public Person(String name, String surname, LocalDate dateOfBirth, String code){
+    public Person(String name, String surname, LocalDate dateOfBirth){
     	setName(name);
     	setSurname(surname);
     	setDateOfBirth(dateOfBirth);
-    	setCode(code);
     }
 
 	public String getName() {
@@ -49,7 +49,14 @@ public abstract class Person {
 	}
 	
 	public String getFullName() {
-		return name + " " + surname + " " + code;
+		return getName() + " " + getSurname() + " " + generateCode();
+	}
+	
+	public String generateCode(){
+		Random rnd = new Random();
+		int agencyCode = rnd.nextInt(10000, 100000);
+		String strCode = String.valueOf(agencyCode);
+		return strCode;
 	}
 	
 	@Override

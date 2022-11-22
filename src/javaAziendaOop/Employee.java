@@ -3,13 +3,13 @@ package javaAziendaOop;
 import java.time.LocalDate;
 
 public class Employee extends Person {
-   int salary;
-   int monthlyCount;
+   private int salary;
+   private int monthlyCount;
    
    public Employee(String name, String surname, 
-		   LocalDate dateOfBirth, String code, int salary, int monthlyCount){
+		   LocalDate dateOfBirth, int salary, int monthlyCount){
 	   
-	   super(name, surname, dateOfBirth, code);
+	   super(name, surname, dateOfBirth);
 	   setSalary(salary);
 	   setMonthlyCount(monthlyCount);
    }

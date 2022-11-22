@@ -9,17 +9,17 @@ public class Main {
 	
 	System.out.println("");
 	
-	Employee e1 = new Employee("Marco", "Rossi", LocalDate.of(1970, 10, 19), "12345", 1200, 14);
+	Employee e1 = new Employee("Marco", "Rossi", LocalDate.of(1970, 10, 19),  12000, 14);
 	System.out.println(e1);
 	
 	System.out.println("");
 	
-	Employee e2 = new Employee("Gianni", "Celeste", LocalDate.of(1967, 12, 21), "13465", 1400, 14);
+	Employee e2 = new Employee("Gianni", "Celeste", LocalDate.of(1967, 12, 21), 1400, 14);
 	System.out.println(e2);
 	
 	System.out.println("");
 	
-	Employee e3 = new Employee("Silvio", "Conti", LocalDate.of(1963, 9, 10), "11498", 1300, 14);
+	Employee e3 = new Employee("Silvio", "Conti", LocalDate.of(1963, 9, 10), 1300, 14);
 	System.out.println(e3);
 	
 	System.out.println("------------------------------------------");
@@ -30,12 +30,12 @@ public class Main {
 	
 	System.out.println("");
 	
-	Boss b1 = new Boss("Giorgio", "Bianchi", LocalDate.of(1955, 8, 16), "22321", 2500, 10000);
+	Boss b1 = new Boss("Giorgio", "Bianchi", LocalDate.of(1955, 8, 16), 2500, 10000);
 	System.out.println(b1);
 	
 	System.out.println("");
 	
-	Boss b2 = new Boss("Guido", "Lavespa", LocalDate.of(1974, 4, 5), "23478", 3000, 12000);
+	Boss b2 = new Boss("Guido", "Lavespa", LocalDate.of(1974, 4, 5), 3000, 12000);
 	System.out.println(b2);
 	
 	Person [] persons = {e1,e2,e3,b1,b2};
